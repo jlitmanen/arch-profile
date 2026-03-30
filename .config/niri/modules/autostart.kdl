@@ -1,0 +1,10 @@
+// spawn-at-startup "/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1"
+// spawn-at-startup "waybar"
+// spawn-at-startup "hypridle"
+// spawn-at-startup "swww-daemon"
+// spawn-sh-at-startup "wl-paste --type text --watch cliphist store"
+// spawn-sh-at-startup "wl-paste --type image --watch cliphist store"
+// spawn-sh-at-startup "dex -a"
+// spawn-sh-at-startup "udiskie --tray"
+
+spawn-sh-at-startup "~/.config/niri/scripts/autostart"

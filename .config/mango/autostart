@@ -1,0 +1,18 @@
+#! /bin/bash
+set +e
+
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots &
+swaybg -i ~/Pictures/Wallpaper/arch.jpg >/dev/null 2>&1 &
+swaync >/dev/null 2>&1 &
+
+swayosd-server >/dev/null 2>&1 &
+# just a precaution, caps lock popped up when using swayosd-libinput-backend
+swayosd-libinput-backend --exclude-caps-lock
+
+waybar -c ~/.config/mango/waybar/config.jsonc -s ~/.config/mango/waybar/style.scss
+
+wl-clip-persist --clipboard regular --reconnect-tries 0 &
+wl-paste --type text --watch cliphist store &
+
+# Permission authentication
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1

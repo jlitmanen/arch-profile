@@ -1,0 +1,34 @@
+prefer-no-csd
+
+layout {
+    gaps 2
+    center-focused-column "on-overflow"
+    always-center-single-column
+
+    // (Mod+R)
+    preset-column-widths {
+        proportion 0.33333
+        proportion 0.5
+        proportion 0.66667
+    }
+
+    default-column-width {}
+
+    focus-ring {
+        off
+    }
+
+    border {
+        on
+        width 1
+    }
+
+    shadow {
+        off
+    }
+}
+
+window-rule {
+    geometry-corner-radius 9
+    clip-to-geometry true
+}

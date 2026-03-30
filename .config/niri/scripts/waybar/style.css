@@ -1,0 +1,61 @@
+@import "theme.css";
+
+* {
+    font-family: "FiraCode Nerd Font", sans-serif;
+    font-size: 12px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    color: @primary;
+    background-color: @secondary;
+}
+
+#workspaces button {
+    padding: 0 2px;
+    color: @primary;
+    border-bottom: 1px solid transparent;
+}
+
+#workspaces button.active {
+    background-color: @secondary;
+    border-bottom: 2px solid @primary;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+}
+
+#clock,
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#tray {
+    padding: 0 6px;
+    margin: 4px 2px;
+    border-radius: 8px;
+}
+
+/* Specific styling for groups */
+#group-hardware,
+#group-network-bt {
+    border: 1px solid @primary;
+    border-radius: 8px;
+    margin-left: 3px;
+}
+
+/* Ensure all taskbar buttons are visible, not just active ones */
+#taskbar button {
+    padding: 0 8px;
+    color: @primary; /* Use your primary color for text */
+    background-color: transparent; /* Base background */
+    border-bottom: 2px solid @border; /* Dimmer border for inactive */
+    opacity: 1; /* Force visibility */
+}
+
+#taskbar button.active {
+    background-color: @secondary;
+    border-bottom: 2px solid @primary;
+}

@@ -1,0 +1,54 @@
+/* Pastel Primary (Ayu Gold/Champagne) */
+@define-color primary rgba(230, 180, 80, 0.7);
+
+/* Dark Secondary (Ayu UI/Line Background) */
+@define-color secondary rgba(25, 31, 38, 0.85);
+
+/* Bright Error (Ayu Red) */
+@define-color error rgb(255, 51, 51);
+
+* {
+    font-family: "FiraCode Nerd Font", sans-serif;
+    font-size: 12px;
+    border: none;
+    border-radius: 0;
+}
+
+window#waybar {
+    color: @primary;
+    background-color: @secondary;
+}
+
+#workspaces button {
+    padding: 0 2px;
+    color: @primary;
+    border-bottom: 1px solid transparent;
+}
+
+#workspaces button.active {
+    background-color: @secondary;
+    border-bottom: 2px solid @primary;
+}
+
+#workspaces button.urgent {
+    background-color: @error;
+}
+
+#clock,
+#network,
+#bluetooth,
+#cpu,
+#memory,
+#tray {
+    padding: 0 6px;
+    margin: 4px 2px;
+    border-radius: 8px;
+}
+
+/* Specific styling for groups */
+#group-hardware,
+#group-network-bt {
+    border: 1px solid @primary;
+    border-radius: 8px;
+    margin-left: 3px;
+}

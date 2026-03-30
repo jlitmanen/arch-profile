@@ -1,0 +1,24 @@
+animations {
+    slowdown 0.9
+    window-open {
+        duration-ms 300
+        curve "ease-out-cubic"
+    }
+
+    window-close {
+        duration-ms 300
+        curve "ease-out-cubic"
+    }
+
+    window-movement {
+        duration-ms 370
+    }
+
+    workspace-switch {
+        spring damping-ratio=1.0 stiffness=500 epsilon=0.0001
+    }
+
+    config-notification-open-close {
+        spring damping-ratio=0.6 stiffness=500 epsilon=0.0001
+    }
+}

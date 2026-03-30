@@ -1,0 +1,25 @@
+@import url("/home/joonas/.config/wlogout/themes/ayu/gold.css");
+
+#lock {
+  background-image: url("/home/joonas/.config/wlogout/icons/wlogout/mocha/yellow/lock.svg");
+}
+
+#logout {
+  background-image: url("/home/joonas/.config/wlogout/icons/wlogout/mocha/yellow/logout.svg");
+}
+
+#suspend {
+  background-image: url("/home/joonas/.config/wlogout/icons/wlogout/mocha/yellow/suspend.svg");
+}
+
+#hibernate {
+  background-image: url("/home/joonas/.config/wlogout/icons/wlogout/mocha/yellow/hibernate.svg");
+}
+
+#shutdown {
+  background-image: url("/home/joonas/.config/wlogout/icons/wlogout/mocha/yellow/shutdown.svg");
+}
+
+#reboot {
+  background-image: url("/home/joonas/.config/wlogout/icons/wlogout/mocha/yellow/reboot.svg");
+}

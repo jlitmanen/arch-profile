@@ -1,0 +1,171 @@
+{
+  "modules-left": ["sway/workspaces", "sway/scratchpad"],
+  "modules-center": ["clock", "custom/notification"],
+  "modules-right": [
+    "tray",
+    "custom/sep",
+    "pulseaudio",
+    "custom/sep",
+    "group/battery",
+    "custom/sep",
+    "group/network-bt",
+    "custom/sep",
+    "group/hardware",
+    "custom/sep",
+    "custom/power",
+  ],
+  "custom/sep": {
+    "format": " | ",
+  },
+  "sway/workspaces": {
+    "format": " main | {windows}",
+    "format-window-separator": " | ",
+    "window-rewrite-default": "{name}",
+    "window-format": "<span color='#e0e0e0'>{name}</span>",
+    "window-rewrite": {
+      "class<firefox> title<.*chat.gig.tech.*>": "",
+      "class<kitty>": "kitty",
+      "class<brave-browser>": "brave",
+      "class<dev.zed.Zed>": "zed",
+    },
+    "ignore-hidden": true,
+    "on-click": "activate",
+    "on-click-right": "deactivate",
+    "sort-by-id": true,
+    "format-icons": {
+      "1": "",
+      "2": " ",
+    },
+  },
+  "sway/window": {
+    "format": "{title}",
+    "max-length": 50,
+  },
+
+  /** CENTER */
+  "clock": {
+    "format": "{:%H:%M | %d/%m}",
+    "tooltip-format": "<big>{:%Y %B}</big>\n\n<tt><big>{calendar}</big></tt>",
+  },
+  "custom/notification": {
+    "tooltip": true,
+    "format": "| notifications {icon} ",
+    "format-icons": {
+      "notification": "󱅫",
+      "none": "󰂜",
+      "dnd-notification": "󰂠",
+      "dnd-none": "󰪓",
+      "inhibited-notification": "󰂛",
+      "inhibited-none": "󰪑",
+      "dnd-inhibited-notification": "󰂛",
+      "dnd-inhibited-none": "󰪑",
+    },
+    "return-type": "json",
+    "exec-if": "which swaync-client",
+    "exec": "swaync-client -swb",
+    "on-click": "swaync-client -t -sw",
+    "on-click-right": "swaync-client -d -sw",
+    "escape": true,
+  },
+
+  /** RIGHT */
+  "pulseaudio": {
+    "format": "{icon} {volume}%",
+    "format-muted": "󰝟",
+    "format-icons": {
+      "default": [" ", " ", " "],
+    },
+    "on-click": "foot -e wiremix",
+  },
+  "group/network-bt": {
+    "orientation": "horizontal",
+    "drawer": {
+      "click-to-reveal": true,
+      "transition-duration": 500,
+      "children-class": "conn-child",
+      "transition-left-to-right": true,
+    },
+    "modules": ["custom/conn", "bluetooth", "network"],
+  },
+  "custom/conn": {
+    "format": "connections",
+  },
+  "bluetooth": {
+    "format": "󰂯",
+    "format-connected": "󰂱",
+    "on-click": "foot -e bluetui",
+  },
+  "network": {
+    "format-wifi": " ",
+    "format-disconnected": "󰖪 ",
+    "on-click": "foot -e impala",
+  },
+
+  "group/hardware": {
+    "orientation": "horizontal",
+    "modules": ["custom/hw", "cpu", "memory"],
+    "drawer": {
+      "click-to-reveal": true,
+      "transition-duration": 500,
+      "children-class": "hw-child",
+      "transition-left-to-right": true,
+    },
+  },
+  "custom/hw": {
+    "format": "hardware",
+  },
+  "cpu": {
+    "interval": 10,
+    "format": "  {usage}%",
+    "max-length": 10,
+    "on-click": "foot -e btop",
+  },
+  "memory": {
+    "format": "  {percentage}%",
+    "interval": 5,
+    "on-click": "foot -e btop",
+  },
+
+  /**
+   * Battery
+   */
+  "group/battery": {
+    "orientation": "horizontal",
+    "modules": ["battery", "power-profiles-daemon"],
+    "drawer": {
+      "click-to-reveal": true,
+      "transition-duration": 500,
+      "children-class": "battery-child",
+      "transition-left-to-right": true,
+    },
+  },
+  "battery": {
+    "bat": "BAT0",
+    "interval": 60,
+    "format": "{icon} {capacity}%",
+    "format-icons": {
+      "default": ["󰂌 "],
+      "charging": ["󰂏 "],
+      "plugged": [" "],
+    },
+    "tooltips": {
+      "default": "{time}",
+    },
+    "max-length": 25,
+  },
+  "power-profiles-daemon": {
+    "format": " {icon}",
+    "tooltip-format": "Profile: {profile}\nDriver: {driver}",
+    "format-icons": {
+      "default": "  ",
+      "performance": "  ",
+      "balanced": "  ",
+      "power-saver": "  ",
+    },
+  },
+  "custom/power": {
+    "format": "󰐥  ",
+    "tooltip": false,
+    "on-click": "~/.config/sway/scripts/newpower",
+  },
+}

@@ -1,0 +1,18 @@
+#! /bin/bash
+set +e
+
+SCRIPT_DIR="$(dirname "$BASH_SOURCE")"
+
+dbus-update-activation-environment --systemd WAYLAND_DISPLAY XDG_CURRENT_DESKTOP=wlroots >/dev/null 2>&1 &
+
+"$SCRIPT_DIR/services" >/dev/null 2>&1 &
+"$SCRIPT_DIR/bar" >/dev/null 2>&1 &
+
+wl-clip-persist --clipboard regular --reconnect-tries 0 >/dev/null 2>&1 &
+wl-paste --type text --watch cliphist store >/dev/null 2>&1 &
+
+# Permission authentication
+/usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1 >/dev/null 2>&1 &
+
+sleep 1
+notify-send "System" "Startup complete!"

@@ -1,0 +1,22 @@
+for_window [title="^.*"] border pixel 1, title_format "%title"
+for_window [class=".*"] border normal 1
+for_window [class=".*"] title_format " "
+
+titlebar_padding 1 1
+titlebar_border_thickness 0
+font pango:monospace 1
+default_border pixel 0
+
+# color variables (Hex equivalents of your Waybar palette)
+set $primary    #E6B450
+set $secondary  #191F26
+set $error      #FF3333
+set $text       #E6E1CF
+set $inactive   #5C6773
+
+# class                 border      backgr.     text        indicator   child_border
+client.focused          $primary    $primary    $primary    $primary    $primary
+client.focused_inactive $secondary  $secondary  $inactive   $secondary  $secondary
+client.unfocused        $secondary  $secondary  $inactive   $secondary  $secondary
+client.urgent           $error      $error      #ffffff     $error      $error
+client.background       $secondary

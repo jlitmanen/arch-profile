@@ -1,0 +1,25 @@
+@define-color primary   rgba(230, 180, 80, 0.7);
+@define-color secondary rgba(25, 31, 38, 0.85);
+@define-color error     rgba(255, 51, 51, 1);
+@define-color border    rgba(230, 180, 80, 0.2);
+
+window {
+    background-color: rgba(25, 31, 38, 0.85);
+    border-radius: 10px;
+    border: 2px solid rgba(230, 180, 80, 0.7);
+    padding: 0px;
+}
+
+progressbar progress {
+    background-color: rgba(230, 180, 80, 0.7);
+    border-radius: 5px;
+}
+
+progressbar trough {
+    background-color: rgba(25, 31, 38, 0.85);
+    border-radius: 5px;
+}
+
+label {
+    color: #cdd6f4;
+}

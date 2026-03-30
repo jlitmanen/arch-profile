@@ -1,0 +1,53 @@
+# General
+daemonize
+show-failed-attempts
+ignore-empty-password
+# show-keyboard-layout
+font=Fira Code
+font-size=18
+
+# Indicator
+indicator-radius=100
+indicator-thickness=2
+indicator-caps-lock
+
+# Background
+color=1e1e2eff
+image=~/Pictures/Wallpaper/Fp1orq.jpg
+scaling=fill
+
+# Inside circle (default state)
+inside-color=313244cc
+line-color=1e1e2e00
+ring-color=89b4faff
+text-color=cdd6f4ff
+separator-color=00000000
+
+# Inside circle (verification/checking password)
+inside-ver-color=313244cc
+line-ver-color=1e1e2e00
+ring-ver-color=89dcebff
+text-ver-color=89dcebff
+
+# Inside circle (wrong password)
+inside-wrong-color=313244cc
+line-wrong-color=1e1e2e00
+ring-wrong-color=f38ba8ff
+text-wrong-color=f38ba8ff
+
+# Inside circle (cleared input)
+inside-clear-color=313244cc
+line-clear-color=1e1e2e00
+ring-clear-color=a6e3a1ff
+text-clear-color=a6e3a1ff
+
+# Key press highlighting
+bs-hl-color=f38ba8ff
+key-hl-color=a6e3a1ff
+caps-lock-bs-hl-color=f38ba8ff
+caps-lock-key-hl-color=a6e3a1ff
+
+# Layout display
+layout-bg-color=1e1e2ecc
+layout-text-color=cdd6f4ff
+layout-border-color=89b4faff

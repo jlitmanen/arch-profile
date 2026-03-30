@@ -1,0 +1,6 @@
+#!/bin/bash
+
+SCRIPT_DIR="$(dirname "$BASH_SOURCE")"
+WAYBAR_DIR="$SCRIPT_DIR/waybar"
+
+pkill -SIGTERM waybar ; sleep 1 ; waybar -c "$WAYBAR_DIR/config.jsonc" -s "$WAYBAR_DIR/style.css" >/dev/null 2>&1 &

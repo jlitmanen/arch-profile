@@ -1,0 +1,22 @@
+#!/bin/bash
+
+# Ayu Colors (matching your Waybar)
+fg="#191F26"
+bg="#E6E1CF"
+sel_fg="#E6B450"
+sel_bg="#191F26"
+
+# Define the options
+options="Lock\nLog out\nSuspend\nReboot\nShutdown"
+
+# Use wmenu to pick an option
+selected=$(echo -e "$options" | wmenu -i -n "$bg" -N "$fg" -s "$sel_bg" -S "$sel_fg")
+
+# Execute based on choice
+case "$selected" in
+    "Lock")     ~/.config/sway/scripts/lockscreen ;;
+    "Log out")  swaymsg exit ;;
+    "Suspend")  systemctl suspend ;;
+    "Reboot")   systemctl reboot ;;
+    "Shutdown") systemctl poweroff ;;
+esac

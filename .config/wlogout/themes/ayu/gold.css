@@ -1,0 +1,29 @@
+* {
+  background-image: none;
+  box-shadow: none;
+}
+
+window {
+  background-color: rgba(25, 31, 38, 0.85);
+}
+
+button {
+  border-radius: 0;
+  border-color: rgba(230, 180, 80, 0.7);
+  text-decoration-color: rgba(230, 180, 80, 0.7);
+  color: rgba(230, 180, 80, 0.7);
+  background-color: rgba(25, 31, 38, 0.85);
+  border-style: solid;
+  border-width: 1px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: 25%;
+}
+
+button:focus,
+button:active,
+button:hover {
+  /* 20% Overlay 2, 80% mantle */
+  background-color: rgb(48, 50, 66);
+  outline-style: none;
+}

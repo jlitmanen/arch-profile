@@ -1,0 +1,10 @@
+#!/bin/bash
+
+yay -S \
+    github-cli kitty fuzzel waybar steam wiremix impala bluetui \
+    swaylock swaync swayosd \
+    yazi foot hyprpaper wlogout ttf-firacode-nerd \
+    zsh zsh-autosuggestions zsh-syntax-highlighting \
+    --needed --noconfirm
+
+bash -c "$(curl --fail --show-error --silent --location https://raw.githubusercontent.com/zdharma-continuum/zinit/HEAD/scripts/install.sh)"

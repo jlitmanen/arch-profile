@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+#
+chosen=$(printf "󰐥  Shut down\n󰒲  Suspend\n󰑓  Reboot\n󰍃  Log out" \
+    | fuzzel --dmenu --config="$HOME/.config/hypr/fuzzel/powermenu.ini")
+
+case "$chosen" in
+    *"Shut down")  systemctl poweroff ;;
+    *"Suspend")    systemctl suspend ;;
+    *"Reboot")     systemctl reboot ;;
+    *"Log out")    hyprctl dispatch exit ;;
+esac

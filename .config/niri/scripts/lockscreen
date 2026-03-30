@@ -1,0 +1,30 @@
+#!/bin/bash
+
+# Ayu Palette
+bg="#191F26"
+gold="#E6B450"
+red="#FF3333"
+text="#E6E1CF"
+
+# Run swaylock with matching Ayu styling
+swaylock \
+    --screenshots \
+    --clock \
+    --indicator \
+    --indicator-radius 100 \
+    --indicator-thickness 10 \
+    --effect-blur 7x5 \
+    --effect-vignette 0.5:0.5 \
+    --ring-color "$gold" \
+    --key-hl-color "$bg" \
+    --text-color "$text" \
+    --line-color 00000000 \
+    --inside-color "${bg}99" \
+    --separator-color 00000000 \
+    --ring-ver-color "$gold" \
+    --inside-ver-color "$bg" \
+    --ring-wrong-color "$red" \
+    --inside-wrong-color "$bg" \
+    --bs-hl-color "$red" \
+    --font "JetBrains Mono" \
+    --datestr "%A, %B %d"

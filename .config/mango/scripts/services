@@ -1,0 +1,9 @@
+#!/bin/bash
+set +e
+
+swaybg -i ~/Pictures/Wallpaper/arch.jpg >/dev/null 2>&1 &
+swaync >/dev/null 2>&1 &
+
+swayosd-server >/dev/null 2>&1 &
+# just a precaution, caps lock popped up when using swayosd-libinput-backend
+swayosd-libinput-backend --exclude-caps-lock >/dev/null 2>&1 &

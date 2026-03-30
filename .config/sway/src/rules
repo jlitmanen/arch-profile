@@ -1,0 +1,20 @@
+for_window [app_id="^firefox$" title="^Extension: \(Bitwarden - Free Password Manager\) - Bitwarden — Mozilla Firefox$"] floating enable
+
+# 1. Float windows with specific common "popup" titles/roles
+for_window [app_id="firefox" title="^$"] floating enable
+for_window [app_id="firefox" window_role="about"] floating enable
+for_window [app_id="firefox" window_role="pop-up"] floating enable
+for_window [app_id="firefox" window_role="dialog"] floating enable
+
+# 2. Float Firefox Extension popouts and special windows
+for_window [app_id="firefox" instance="lazy-extension"] floating enable
+for_window [app_id="firefox" title="Extension:.*"] floating enableqq
+for_window [app_id="firefox" title="Picture-in-Picture"] floating enable, sticky enable
+
+# 3. Float specific built-in Firefox tools
+for_window [app_id="firefox" title="Library"] floating enable
+for_window [app_id="firefox" title="About Mozilla Firefox"] floating enable
+
+# use foot for waybar stuff
+# impala, bluetui, btop and wiremix
+for_window [app_id="foot" title="foot"] floating enable

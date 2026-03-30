@@ -1,0 +1,109 @@
+/* COLORS - Derived from your Waybar style */
+@define-color primary rgba(230, 180, 80, 0.7);
+@define-color primary-solid rgb(230, 180, 80);
+@define-color secondary rgba(25, 31, 38, 0.85);
+@define-color error rgb(255, 51, 51);
+@define-color text-color #ffffff;
+
+* {
+    font-family: "FiraCode Nerd Font", sans-serif;
+    font-size: 13px; /* Slightly larger than bar for readability */
+    transition: 200ms;
+}
+
+/* Control Center Window */
+.control-center {
+    background: @secondary;
+    border: 1px solid @primary;
+    border-radius: 8px;
+    margin: 10px;
+    color: @text-color;
+}
+
+/* Notifications Styling */
+.notification-row {
+    outline: none;
+    margin: 8px;
+}
+
+.notification-content {
+    background: rgba(25, 31, 38, 0.5); /* Slightly transparent slate */
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid @primary;
+}
+
+.summary {
+    color: @primary-solid;
+    font-weight: bold;
+    font-size: 14px;
+}
+
+.body {
+    color: @text-color;
+}
+
+.time {
+    color: rgba(230, 180, 80, 0.5);
+}
+
+/* Buttons and Interactions */
+.close-button {
+    background: @primary;
+    color: @secondary;
+    border-radius: 4px;
+    margin: 5px;
+}
+
+.close-button:hover {
+    background: @error;
+    color: white;
+}
+
+/* Widgets (DND, Mpris, etc) */
+.widget-title {
+    color: @primary-solid;
+    margin: 10px;
+    font-size: 1.2rem;
+}
+
+.widget-title > button {
+    background: @secondary;
+    border: 1px solid @primary;
+    color: @primary-solid;
+    border-radius: 8px;
+}
+
+.widget-title > button:hover {
+    background: @primary;
+    color: @secondary;
+}
+
+.widget-dnd {
+    background: transparent;
+    color: @primary-solid;
+}
+
+.widget-dnd > switch {
+    background: @secondary;
+    border: 1px solid @primary;
+    border-radius: 8px;
+}
+
+.widget-dnd > switch:checked {
+    background: @primary;
+}
+
+/* MPRIS (Media Player) */
+.widget-mpris {
+    background: rgba(230, 180, 80, 0.1);
+    border: 1px solid @primary;
+    border-radius: 8px;
+    padding: 10px;
+    margin: 10px;
+}
+
+.widget-mpris-title {
+    color: @primary-solid;
+    font-weight: bold;
+}
